@@ -1,28 +1,10 @@
-# Types of Collections:
+# Music Library
 
-- Synthesizers
-    - Ambients
-    - Percussion
-    - Bass
-    - Pads
-    - Leads
-    - Samplers
+- [Documentation](https://github.com/punksnotdev/music-library/wiki)
 
-- Banks
-    - Sounds
-    - Individual Sound Configuration
 
-- Effects
-- Musical sequences
-    - Melodies
-    - Rhythms
-    - Bass Lines
-    - Progressions
+# Manual Tests
 
-- Texts
-- Reactive visuals
-- Images
-    - Photos
-    - Videos
+#### Routing
 
-- Routines, Tasks, Functions
+- [Generator Through FX](https://github.com/punksnotdev/music-library/blob/dev/Tests/ManualTests/routing-generator_thru_fx.scd)
