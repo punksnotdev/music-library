@@ -1,16 +1,20 @@
 SynthDef(\fx_dyn_simpleCompressor, {
 
-	arg inBus=0, wet=0.75;
+	arg
+	inBus=0, outBus=0, wet=1;
 
 	var sig = In.ar(inBus);
 
-	Out.ar(
-        [0,1],
-        (sig * (1-wet))+
-        (FreeVerb.ar(
-            In.ar(inBus) * wet,
-            rv1,
-            rv2
-        )*wet)
-    )
+
+	var dsp = CompanderD.ar(
+		sig,
+		0.9,
+		1,
+		0.8
+	);
+
+	var mix = (sig * (1-wet)) + (dsp * wet);
+
+	ReplaceOut.ar( outBus, Pan2.ar( mix, 0 ) );
+
 }).store;
