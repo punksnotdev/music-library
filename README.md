@@ -7,4 +7,4 @@
 
 #### Routing
 
-- [Generator Through FX](routing-generator_thru_fx)
+- [Generator Through FX](https://github.com/punksnotdev/music-library/blob/dev/Tests/ManualTests/routing-generator_thru_fx.scd)
