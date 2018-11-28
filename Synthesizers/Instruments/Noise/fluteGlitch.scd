@@ -19,6 +19,6 @@ SynthDef(\fluteGlitch, {
 
 	Out.ar(out, (Pan2.ar(sig * env) / 2));
 
-}).add;
+}).store;
 
 )
