@@ -1,4 +1,5 @@
-SynthDef(\fx_spc_freeverb, {
+SynthDef(\simpleReverb, {
+	
 	arg
 	inBus=0, outBus=0, wet=1,
 

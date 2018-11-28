@@ -1,4 +1,4 @@
-SynthDef(\fx_dyn_simpleCompressor, {
+SynthDef(\simpleCompressor, {
 
 	arg
 	inBus=0, outBus=0, wet=1;
