@@ -71,7 +71,9 @@ var loadPath = {
 
 
 currentFolder = synths;
+(thisProcess.nowExecutingPath ++ '/../Synthesizers/*').postln;
+// loadPath.value(thisProcess.nowExecutingPath ++ '../Synthesizers/*');
 
-loadPath.value("/home/mukkekunst/Musica/voidfunction/library/Synthesizers/*");
+loadPath.value("/home/furenku/Music/voidfunction/music-library/Synthesizers/*");
 
 synths;

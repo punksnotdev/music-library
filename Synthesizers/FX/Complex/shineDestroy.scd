@@ -2,14 +2,16 @@
 
 	SynthDef(\shineDestroy, {
 
-		arg freq=440,
+		arg
+		delay=1,
+		gain=3.3,
+		freq=440,
 		t_trig=1,
 		cutoff=3500,
 		res=10,
 		att=1,
 		decay=3,
 		rel=6,
-		gain=3.3,
 		inBus=0,
 		outBus=0;
 
@@ -26,14 +28,14 @@
 
 
 		sig = sig * SinOsc.kr(4).linlin(-1,1,0.3,[1,1.3]);
-		sig = sig.tanh;
+		sig = (sig*gain).tanh;
 
-		sig = sig+Mix.new(CombC.ar(sig,3,[1/3,1/2,1/4],2));
+		sig = sig+Mix.new(CombC.ar(sig,3,delay*[1/3,1/2,1/4],2));
 
 
 		sig = (sig * 1.2).tanh;
 
-		ReplaceOut.ar(outBus,Pan2.ar(sig));
+		Out.ar(outBus,Pan2.ar(sig));
 
 
 	}).store;

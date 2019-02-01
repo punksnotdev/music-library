@@ -1,5 +1,5 @@
-SynthDef(\simpleReverb, {
-	
+SynthDef(\reverb, {
+
 	arg
 	inBus=0, outBus=0, wet=1,
 
@@ -12,7 +12,7 @@ SynthDef(\simpleReverb, {
 
 	var mix = (sig * (1-wet)) + (dsp * wet);
 
-	ReplaceOut.ar( outBus, Pan2.ar( mix, 0 ) );
+	Out.ar( outBus, Pan2.ar( mix, 0 ) );
 
 
 }).store;

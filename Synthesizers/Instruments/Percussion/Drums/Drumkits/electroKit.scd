@@ -3,7 +3,7 @@
 var synthdefs = List.new;
 
 synthdefs.add(
-SynthDef(\kickElectroKit, {
+SynthDef(\kickElectro, {
     |out = 0, pan = 0, amp = 0.3|
     var body, bodyFreq, bodyAmp;
     var pop, popFreq, popAmp;
@@ -32,7 +32,7 @@ SynthDef(\kickElectroKit, {
 );
 
 synthdefs.add(
-SynthDef(\snareElectroKit, {
+SynthDef(\snareElectro, {
     |out = 0, pan = 0, amp = 0.3|
     var pop, popAmp, popFreq;
     var noise, noiseAmp;
@@ -55,7 +55,7 @@ SynthDef(\snareElectroKit, {
 );
 
 synthdefs.add(
-SynthDef(\hihatElectroKit, {
+SynthDef(\hihatElectro, {
     |out = 0, pan = 0, amp = 0.3|
     var click, clickAmp;
     var noise, noiseAmp;
@@ -65,7 +65,7 @@ SynthDef(\hihatElectroKit, {
     noiseAmp = EnvGen.ar(Env.perc(0.001, 0.3, curve: -8), doneAction: 2);
     noise = Mix(BPF.ar(ClipNoise.ar, [4010, 4151], [0.15, 0.56], [1.0, 0.6])) * 0.7 * noiseAmp;
 
-    snd = noise;
+    snd = noise / 1.5;
 
     Out.ar(out, Pan2.ar(snd, pan, amp));
 }).store
@@ -74,7 +74,7 @@ SynthDef(\hihatElectroKit, {
 
 // adapted from a post by Neil Cosgrove (other three are original)
 synthdefs.add(
-SynthDef(\clapElectroKit, {
+SynthDef(\clapElectro, {
     |out = 0, amp = 0.5, pan = 0, dur = 1|
     var env1, env2, snd, noise1, noise2;
 
